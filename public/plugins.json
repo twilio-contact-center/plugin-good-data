@@ -1,0 +1,13 @@
+[
+  {
+    "name": "plugin-good-data",
+    "version": "0.0.0",
+    "class": "GoodDataPlugin",
+    "requires": [
+      {
+        "@twilio/flex-ui": "^1"
+      }
+    ],
+    "src": "https://localhost:3000/plugin-good-data.js"
+  }
+]
