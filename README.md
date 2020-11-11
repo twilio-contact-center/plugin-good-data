@@ -21,3 +21,6 @@ to
 - `GoodDataPlugin.js` - adds the icon and Flex view of Supervisor Dashboard (an example)
 - `LoginGoodData.js` - this component renders an invisible iframe with `appSsoUrl` upon checking if the login conditions are fulfilled
 - `LoginGoodData.js` - set of API calls to generate auth token to `analytics.ytica.com` (reporting) and `app.ytica.com` (player) through `appSsoUrl`.
+
+## Disclaimer
+This software is to be considered "sample code", a Type B Deliverable, and is delivered "as-is" to the user. Twilio bears no responsibility to support the use or implementation of this software.
