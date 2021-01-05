@@ -1,0 +1,49 @@
+.button {    
+    align-self: center;
+    font-size: 10px;
+    white-space: nowrap;
+    width: 165px;
+    height: 32px;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: left;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: rgb(34, 34, 34);
+    outline: none;
+    border-radius: 0px;
+    padding: 0px 8px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(204, 204, 204);
+    margin: 16px 16px 0 0;
+    text-decoration: none;
+}
+
+.button-active {
+    background-color: #CCC;
+}
+
+.button:hover {
+    background: rgba(207, 207, 207, 0.2);
+    border-radius: 0px;
+    cursor: pointer;
+}
+
+.wrapper {
+    position: absolute; 
+    height: 100%;
+    width: 195px;
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-start;
+    overflow-y: auto;
+    border-right: 1px solid #CCC;
+    padding: 0 0 16px 16px;
+}
+
+.bold {
+    font-weight: bold;
+}

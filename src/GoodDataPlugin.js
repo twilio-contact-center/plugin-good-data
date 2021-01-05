@@ -1,6 +1,9 @@
 import React from 'react';
 import { FlexPlugin } from 'flex-plugin';
-import { GoodDataLogin } from './GoodDataLogin';
+import * as Flex from '@twilio/flex-ui';
+import DashboardSelector from './components/DashboardSelector/DashboardSelector.jsx'
+
+
 const PLUGIN_NAME = 'GoodDataPlugin';
 export default class GoodDataPlugin extends FlexPlugin {
   constructor() {
@@ -15,33 +18,30 @@ export default class GoodDataPlugin extends FlexPlugin {
    */
   init(flex, manager) {
     const options = { sortOrder: -1 };
-    flex.SideNav.Content.add(
-      <flex.SideLink
+
+    Flex.SideNav.Content.add(
+      <Flex.SideLink
         showLabel={ true }
         icon="DefaultAvatar"
         onClick={() =>
-          flex.Actions.invokeAction("NavigateToView", {
+          Flex.Actions.invokeAction("NavigateToView", {
             viewName: "supervisor-dashboard"
           })}
         key="SupervisorDashboard"
       >
         Supervisor Dashboard
-      </flex.SideLink>
+      </Flex.SideLink>
     );
-    flex.ViewCollection.Content.add(
-      <flex.View name="supervisor-dashboard" key="supervisor-dashboard-view">
+
+    Flex.ViewCollection.Content.add(
+      <Flex.View name="supervisor-dashboard" key="supervisor-dashboard-view" >
         <div>
-        <GoodDataLogin> 
-        <iframe 
-        src="https://analytics.ytica.com/dashboard.html#...." 
-        width="1500" 
-        height="100%"
-        title="supervisor-dashboard"
-         ></iframe>
-        </GoodDataLogin>
+          <DashboardSelector></DashboardSelector>
         </div>
-      </flex.View>,
+      </Flex.View>,
       options
     );
+
+
   }
 }
