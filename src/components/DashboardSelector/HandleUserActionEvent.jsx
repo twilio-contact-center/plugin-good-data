@@ -28,20 +28,23 @@ export class HandleUserActionEvent extends React.PureComponent {
             console.log("HandleUserActionEvent: Missing gdc property on message");
             return;
         }
-        // Listen to GoodData events
-        try {
-            const { name, data } = message.gdc;
+
+        const { name, data } = message.gdc;
+        
         // Capture events related when a users clicks a link - external window
         // https://help.gooddata.com/doc/en/building-on-gooddata-platform/gooddata-integration-into-your-application/embed-gooddata-elements-into-your-applications/embed-dashboards-and-reports/embedded-dashboard-and-report-api-events-and-methods/embedded-dashboard-events#EmbeddedDashboardEvents-Auserclicksalink-externalwindow
-            if (name === 'ui.link') { 
-                //get segment id from the URI
-                const segment = data.uri.substring(data.uri.lastIndexOf('/') + 1);
-                                    
-                console.log("catching Flex Insights click event", data, name, segment);
-                this.handler_uiLink(segment);}
-            } catch (ex) {
-                console.log("HandleUserActionEvent: Not a ui.link event");
-        }
+       
+        if (name !== 'ui.link') {
+            console.log("HandleUserActionEvent: Not a ui.link event");
+            return;
+        }        
+        
+        //get segment id from the URI
+        const segment = data.uri.substring(data.uri.lastIndexOf('/') + 1);
+                            
+        console.log("catching Flex Insights click event", data, name, segment);
+        this.handler_uiLink(segment);}
+
     };
 
     componentDidMount() {
